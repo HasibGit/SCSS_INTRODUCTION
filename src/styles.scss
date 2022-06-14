@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($direction, $wrap, $justifyContent, $alignItems, ) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+.header{
+
+  @include flexCenter();
+
+  background-color: $whiteSmoke;
+  padding: 20px;
+  border: 1px solid $softBlack;
+  margin-top: 100px;
+  height: 20vh;
+
+  h1{
+    font-style: italic;
+    color: $lightMaroon;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.16);
+    background-color: $deepOrange;
+    padding: 10px 0;
+    width: 100% - 30%;
+  }
+}
+
+.flexDiv{
+  @include flex(row, wrap, space-between, center);
+
+  background-color: $whiteSmoke;
+  border: 1px solid $softBlack;
+
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.box{
+  width: 20px;
+  height: 20px;
+  border: 2px solid $softBlack;
+  background-color: $deepOrange;
+}
